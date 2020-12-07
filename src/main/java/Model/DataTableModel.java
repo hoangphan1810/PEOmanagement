@@ -35,6 +35,7 @@ public class DataTableModel extends AbstractTableModel{
                 System.out.println(this.data[i][j]);
             }
         }
+        this.fireTableDataChanged();
     }
 
     @Override

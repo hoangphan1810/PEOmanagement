@@ -28,7 +28,7 @@ import javax.swing.event.TableModelListener;
  */
 public class Mainview extends JFrame implements Observer, TableModelListener {
     JPanel titlepanel;
-    JPanel tablepanel;
+    JScrollPane tablepanel;
     JPanel buttonpanel;
     JButton imporbutton;
     JTable table;
@@ -42,12 +42,13 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
         this.tableModel = new DataTableModel();
         this.setSize(800, 600);
         this.setTitle("PEO Management ");
-        this.setVisible(true);
         this.initView();
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
     private void initView (){
         this.titlepanel = new JPanel();
-        this.tablepanel= new JPanel();
+        this.tablepanel= new JScrollPane();
         this.buttonpanel= new JPanel();
         JPanel container = new JPanel();
         
@@ -60,7 +61,7 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     container.add(this.buttonpanel, BorderLayout.EAST);
     
     this.imporbutton = new JButton("import");
-    this.buttonpanel.add(this.buttonpanel);
+    this.buttonpanel.add(this.imporbutton);
     this.imporbutton.addActionListener(this.controller);
     
     this.table = new JTable();
@@ -77,6 +78,11 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
 //        System.out.println("CSV done");
         ArrayList<String> data = this.controller.getImportedData();
         this.tableModel.setData(data);
+    }
+
+    @Override
+    public void tableChanged(TableModelEvent e) {
+        System.out.println("table data has changed");
     }
 
  
