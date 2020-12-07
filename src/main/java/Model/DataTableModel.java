@@ -32,9 +32,10 @@ public class DataTableModel extends AbstractTableModel{
         for (int i=0; i< data.size()/5; i++){
             for(int j=0; j<5; j++){
                 this.data[i][j]= array[i*5+j];
-                System.out.println(this.data[i][j]);
+//                System.out.println(this.data[i][j]);
             }
         }
+        System.out.println("set data is called");
         this.fireTableDataChanged();
     }
 
