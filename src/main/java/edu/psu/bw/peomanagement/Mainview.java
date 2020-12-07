@@ -40,6 +40,7 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
         this.controller = c;
         this.controller.addObserver(this);
         this.tableModel = new DataTableModel();
+        this.tableModel.addTableModelListener(this);
         this.setSize(800, 600);
         this.setTitle("PEO Management ");
         this.initView();
