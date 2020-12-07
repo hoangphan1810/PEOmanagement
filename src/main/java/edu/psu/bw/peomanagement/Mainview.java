@@ -65,6 +65,7 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     this.imporbutton.addActionListener(this.controller);
     
     this.table = new JTable();
+    this.table.setModel(this.tableModel);
     this.tablepanel = new JScrollPane(this.table);
     table.setFillsViewportHeight(true);
     
