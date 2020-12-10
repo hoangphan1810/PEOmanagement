@@ -26,10 +26,7 @@ public class MainViewController extends Observable implements ActionListener {
    
     
     public MainViewController(){
-        this.data = new ArrayList<>();
-        
-      
-        
+        this.data = new ArrayList<>();  
     }
 
     @Override
@@ -49,12 +46,11 @@ public class MainViewController extends Observable implements ActionListener {
             while ((line = reader.readLine()) != null) {
                 list = new ArrayList<String>(Arrays.asList(line.split(",")));
                 this.data.addAll(list);
-            
         }
     }catch (IOException ex) {
             System.out.println(ex.getMessage());
     }
-        this.CSVDataChanged();
+    this.CSVDataChanged();
 }
     public ArrayList<String> getImportedData(){
         return this.data;

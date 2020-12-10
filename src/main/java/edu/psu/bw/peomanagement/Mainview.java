@@ -57,9 +57,7 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     title.setFont(new Font("Serif", Font.BOLD, 16));
     this.titlepanel.add(title);
     
-    container.setLayout(new BorderLayout());
-    container.add( this.tablepanel, BorderLayout.CENTER);
-    container.add(this.buttonpanel, BorderLayout.EAST);
+    
     
     this.imporbutton = new JButton("import");
     this.buttonpanel.add(this.imporbutton);
@@ -69,6 +67,10 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     this.table.setModel(this.tableModel);
     this.tablepanel = new JScrollPane(this.table);
     table.setFillsViewportHeight(true);
+    
+    container.setLayout(new BorderLayout());
+    container.add( this.tablepanel, BorderLayout.CENTER);
+    container.add(this.buttonpanel, BorderLayout.EAST);
     
     this.setLayout(new BorderLayout());
     this.add(this.titlepanel, BorderLayout.NORTH);
@@ -85,7 +87,6 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     @Override
     public void tableChanged(TableModelEvent e) {
         System.out.println("table data has changed");
+        System.out.println(this.table.getModel().getRowCount());
     }
-
- 
 }
