@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Observable;
+import javax.swing.text.View;
 
 /**
  *
@@ -22,8 +23,13 @@ import java.util.Observable;
 public class MainViewController extends Observable implements ActionListener {
     ArrayList<String> data;
     
+   
+    
     public MainViewController(){
         this.data = new ArrayList<>();
+        
+      
+        
     }
 
     @Override
@@ -53,6 +59,9 @@ public class MainViewController extends Observable implements ActionListener {
     public ArrayList<String> getImportedData(){
         return this.data;
     }
+    
+    
+    
     private void CSVDataChanged(){
         this.setChanged();
         this.notifyObservers();

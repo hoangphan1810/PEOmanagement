@@ -6,6 +6,7 @@
 package edu.psu.bw.peomanagement;
 
 import Controller.MainViewController;
+import Model.DataTableModel;
 
 /**
  *
@@ -13,7 +14,9 @@ import Controller.MainViewController;
  */
 public class App {
     public static void main (String arg[]){
-        MainViewController controller = new MainViewController();
+        DataTableModel model = new DataTableModel();
+        MainViewController controller = new MainViewController( );
         Mainview view = new Mainview(controller);
+        
     }
 }
