@@ -31,6 +31,8 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     JScrollPane tablepanel;
     JPanel buttonpanel;
     JButton imporbutton;
+    JButton totatbutton;
+    JButton codebutton;
     JTable table;
     DataTableModel tableModel;
    
@@ -62,6 +64,14 @@ public class Mainview extends JFrame implements Observer, TableModelListener {
     this.imporbutton = new JButton("import");
     this.buttonpanel.add(this.imporbutton);
     this.imporbutton.addActionListener(this.controller);
+    
+    this.totatbutton = new JButton("total");
+    this.buttonpanel.add(this.totatbutton);
+    this.totatbutton.addActionListener(this.controller);
+    
+    this.codebutton = new JButton("code");
+    this.buttonpanel.add(this.codebutton);
+    this.codebutton.addActionListener(this.controller);
     
     this.table = new JTable();
     this.table.setModel(this.tableModel);
